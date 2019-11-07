@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import App from '../App';
+import Weekly from './Weekly';
 
 class Home extends Component {
   // calls the login method in authentication service
@@ -28,6 +29,7 @@ class Home extends Component {
               </a>.
             </h5>
             <App />
+            <Weekly/>
           </div>
         }
         {
