@@ -109,11 +109,27 @@ class MonthlyCalendar extends React.Component {
 
   render() {
     return (
-      <div className="calendar">
+      
+      <div className="App">
+        <header className="App-header">
+          {/* Beginning of Calendar */}
+
+          <div id="logo">
+            <span className="icon">date_range</span>
+            <span>
+              Play<b>Coach</b>  {/* going to make a prop for either coach or parent */}
+            </span>
+          </div>
+        </header>
+        <main>
+        <div className="calendar">
         {this.renderHeader()}
         {this.renderDays()}
         {this.renderCells()}
       </div>
+        </main>
+      </div>
+            
     );
   }
 }
