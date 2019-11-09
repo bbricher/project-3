@@ -15,12 +15,13 @@ class Weekly extends Component {
             selected: true
           }
         ]}
-        onChange={selections => {
-          // selections.forEach(({ start, end }) => {
-          // console.log('Start:', start, 'End:', end);
-          // })
-          console.log("on change", selections);
-        }}
+        // onChange={selections => {
+        //   // selections.forEach(({ start, end }) => {
+        //   // console.log('Start:', start, 'End:', end);
+        //   // })
+        //   prompt("Are you adding a new class?", "Yes")
+        //   console.log("on change", selections);
+        // }}
         onEventsRequested={({ calendarId, start, end, callback }) => {
             // console.log(calendarId, start, end)
         //   briesApiCall(calendarId, start, end).then(callback);
@@ -39,7 +40,7 @@ class Weekly extends Component {
         //     { start: aDateObject, end: anotherDateObject }
         // ]}
         // height={400}
-        // recurring={true}
+        recurring={true}
         availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday']}
         availableHourRange={{ start: 7, end: 16 }}
       />

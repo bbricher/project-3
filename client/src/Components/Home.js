@@ -28,7 +28,7 @@ class Home extends Component {
                 Log Out
               </a>.
             </h5>
-            <App />
+            <App/>
             <Weekly/>
           </div>
         }
