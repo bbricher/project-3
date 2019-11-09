@@ -18,6 +18,7 @@ class Home extends Component {
         {
           isAuthenticated() &&
           <div className="container column">
+          
             <h5>
               You are logged in!{' '}
               <a
@@ -27,6 +28,7 @@ class Home extends Component {
                 Log Out
               </a>.
             </h5>
+
             <App />
           </div>
         }
