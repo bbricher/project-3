@@ -1,42 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+
+
+//import logo from './logo.svg';
 import './App.css';
-import NavBar from './Components/NavBar';
-import MonthlyCalendar from "./Components/MonthlyCalendar";
+//import NavBar from './Components/NavBar';
+//import MonthlyCalendar from "./Components/MonthlyCalendar";
+import Toolbar from './Components/CoachToolBar/CoachToolBar';
+import SideDrawer from './Components/SideDrawer/SideDrawer';
+import Backdrop from './Components/Backdrop/Backdrop';
+import MonthlyCalendar from './Components/MonthlyCalendar';
 //import {Provider} from 'react-redux';
 //import store from './redux/store';
 
-function App() {
-  return (
+class App extends Component {
+  state = {
+    sideDrawerOpen: false,
+  }
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen }
+    })
+  }
+
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false })
+  }
+
+  render() {
+    let backdrop
+    let sideDrawer
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+      sideDrawer = <SideDrawer />
+    }
+    return (
+      <>
+        <div style={{ height: '100%' }}>
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          {sideDrawer}
+          {backdrop}
+          <main style={{ marginTop: '64px' }}>
+
+            <MonthlyCalendar />
+
+          </main>
+        </div>
 
 
-  //  <Provider store={store}>
-    <>
+      </>
 
-    <NavBar/>
-    <div className="App">
-      <header className="App-header">
-      {/* Beginning of Calendar */}
-      </header>
-      <div className="App">
-        <header>
-          <div id="logo">
-            <span className="icon">date_range</span>
-            <span>
-              Coach<b>calendar</b>
-            </span>
-          </div>
-        </header>
-        <main>
-          <MonthlyCalendar />
-        </main>
-      </div>
-
-      {/* End Of Calendar */}
-      
-    </div>
-    </>
-  );
+    )
+  }
 }
 
 export default App;
