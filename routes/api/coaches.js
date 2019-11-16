@@ -20,13 +20,22 @@ router.route("/")
         method: 'GET',
         headers: {Authorization: `Bearer ${req.headers.idtoken}`}
       }).then(user => {
-        console.log(user.data)
-        res.json({});
+        db.Coach.find({ email: user.data.email }).then(results => {
+          if (results.length === 0) {
+            db.Coach.create({
+              sub: req.headers.sub,
+              email: user.data.email
+            }).then(user => res.json(user))
+            .catch(err => res.status(400).json(err));
+          } else {
+            res.json(results)
+          }
+          
+        })
       })
-      // db.Coach.findById({ email: req.body.email })
       // .then( results => {
 
-        // if (results === "{}") {
+        // if (results) {
         //   db.Coach.create(req.body).then(dbModel => res.json(dbModel)).catch(err => res.status(422).json(err));
         // } else {
         //   

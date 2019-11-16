@@ -24,8 +24,6 @@ const coachSchema = new Schema({
 //   profileCreated: { type: Boolean, required: true, default: false },
   eventsOnCalendar: { type: [eventSchema] },
   sub: { type: String, required: true },
-  iss: { type: String, required: true },
-  idToken: { type: String, required: true },
   profile: { type: coachProfileSchema }
 });
 
