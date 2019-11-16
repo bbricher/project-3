@@ -20,7 +20,7 @@ router.route("/")
         method: 'GET',
         headers: {Authorization: `Bearer ${req.headers.idtoken}`}
       }).then(user => {
-        db.Coach.find({ email: user.data.email }).then(results => {
+        db.Coach.findOne({ email: user.data.email }).then(results => {
           if (results.length === 0) {
             db.Coach.create({
               sub: req.headers.sub,
