@@ -11,9 +11,22 @@ const eventSchema =new Schema({
     childBirthDay: Date
 });
 
-const coachSchema = new Schema({
+const coachProfileSchema = new Schema ({
   name: { type: String, required: true },
-  eventsOnCalendar: { type: [eventSchema] }
+  introduction: { type: String, required: true },
+  favoriteAge: { type: String, required: true },
+  messagingToken: { type: String }
+})
+
+
+const coachSchema = new Schema({
+  email: { type: String, required: true },
+//   profileCreated: { type: Boolean, required: true, default: false },
+  eventsOnCalendar: { type: [eventSchema] },
+  sub: { type: String, required: true },
+  iss: { type: String, required: true },
+  idToken: { type: String, required: true },
+  profile: { type: coachProfileSchema }
 });
 
 const Coach = mongoose.model("Coach", coachSchema);

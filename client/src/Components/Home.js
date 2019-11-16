@@ -14,6 +14,7 @@ class Home extends Component {
   render() {
     // calls the isAuthenticated method in authentication service
     const { isAuthenticated } = this.props.auth;
+    console.log(this.props.auth)
     return (
       <div>
         {
@@ -30,7 +31,7 @@ class Home extends Component {
               </a>.
             </h5>
             <App/>
-
+            <img src="https://static.spacecrafted.com/bb2ee4f6f3ee44468dd524fd88bbeb00/i/e04cf445f9f34fafb3f6cfa8766ffb43/1/GCuCv726gZycFxatknDdac/blankImage.png?dpr=2"/>
             <Weekly/>
           </div>
         }

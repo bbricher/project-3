@@ -25,22 +25,22 @@ class Weekly extends Component {
         onEventsRequested={({ calendarId, start, end, callback }) => {
             // console.log(calendarId, start, end)
         //   briesApiCall(calendarId, start, end).then(callback);
-        //   callback([
-        //     {
-        //       calendarId: "work",
-        //       allDay: true,
-        //       start: new Date(2019, 10, 13, 1, 1, 1, 1),
-        //       end: new Date(2019, 10, 16, 1, 1, 1, 1),
-        //       title: "Something cool"
-        //     }
-        //   ]);
+          callback([
+            {
+              calendarId: "work",
+              allDay: true,
+              start: new Date(2019, 10, 13, 1, 1, 1, 1),
+              end: new Date(2019, 10, 16, 1, 1, 1, 1),
+              title: "Something cool"
+            }
+          ]);
           // console.log(calendarId,start, end)
         }}
         // initialSelections={[
         //     { start: aDateObject, end: anotherDateObject }
         // ]}
         // height={400}
-        recurring={true}
+        // recurring={true}
         availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday']}
         availableHourRange={{ start: 7, end: 16 }}
       />

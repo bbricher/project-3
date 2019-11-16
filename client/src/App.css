@@ -7,9 +7,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 10vh;
+  border-top: 2px solid #0075bc;
+  border-bottom: 2px solid #0075bc;
   display: flex;
+  font-family: omnesprosemibold,Arial,Verdana,sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,7 +21,7 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #fcfcfc;
 }
 
 /* All things below are from the react calendar */
@@ -50,7 +53,7 @@
 /* VARIABLES */
 
 :root {
-  --main-color: #1a8fff;
+  --main-color: #0075bc;
   --text-color: #777;
   --text-color-light: #ccc;
   --border-color: #eee;

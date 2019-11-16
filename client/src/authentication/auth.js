@@ -1,5 +1,7 @@
 import auth0 from 'auth0-js';
 
+import axios from 'axios';
+
 import history from './history';
 
 export default class Auth {
@@ -21,6 +23,24 @@ export default class Auth {
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
+        console.log(authResult);
+        console.log('making api call')
+        axios({
+          url: '/api/coaches',
+          method: 'POST',
+          headers: {
+            sub: authResult.idTokenPayload.sub,
+            iss: authResult.idTokenPayload.iss,
+            idToken: authResult.idToken
+          }
+        })
+        .then(function (response) {
+          var data = JSON.parse(response.config.data);
+          console.log(data)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
         this.setSession(authResult);
         history.replace('/home');
       } else if (err) {
@@ -29,6 +49,14 @@ export default class Auth {
       }
     });
   }
+
+  // '/api/coaches', {
+  //   // find way to pass in as headers (documentation in axios)
+  //   sub: authResult.idTokenPayload.sub,
+  //   iss: authResult.idTokenPayload.iss,
+  //   idToken: authResult.idToken
+  //   // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN
+  // }
 
   // Sets user details in localStorage
   setSession = (authResult) => {

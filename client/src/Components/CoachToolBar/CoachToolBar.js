@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './CoachToolbar.css'
 
@@ -10,9 +11,11 @@ const Coachtoolbar = props => (
         
         <div className="toolbar_navigation-items">
           <ul>
-            <li>
-              <a href="/">Schedule</a>
-            </li>
+            <Link to={"/Schedule"}>
+              <li>
+                <a>Schedule</a>
+              </li>
+            </Link>
             <li>
               <a href="/">Your Profile</a>
             </li>
@@ -21,6 +24,9 @@ const Coachtoolbar = props => (
             </li>
             <li>
               <a href="/">Training</a>
+            </li>
+            <li>
+              {/* <img src="https://static.spacecrafted.com/bb2ee4f6f3ee44468dd524fd88bbeb00/i/fc4b5d5a03694c48978aa2ed0c0a20fa/1/5feFb8zhrk/PlayWisely_Horz_4C_small.png?dpr=2"/> */}
             </li>
           </ul>
 
