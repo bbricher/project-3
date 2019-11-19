@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import MonthlyCalendar from './Components/MonthlyCalendar';
-import Coachtoolbar from '../../Components/Nav/CoachToolbar/CoachToolBar';
-
+import MonthlyCalendar from './Components/Scheduling/MonthlyCalendar'
+import Weekly from './Components/Scheduling/Weekly';
 
 class Schedule extends Component {
 
@@ -12,8 +10,9 @@ class Schedule extends Component {
     return (
       <Router>
         <>
-          <Coachtoolbar />
-          <MonthlyCalendar />
+                  
+         <MonthlyCalendar />
+         <Weekly/>
         </>
       </Router>
 
