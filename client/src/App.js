@@ -1,57 +1,35 @@
 import React, { Component } from 'react';
-
-
-//import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-//import NavBar from './Components/NavBar';
-//import MonthlyCalendar from "./Components/MonthlyCalendar";
-import Toolbar from './Components/CoachToolBar/CoachToolBar';
-import SideDrawer from './Components/SideDrawer/SideDrawer';
-import Backdrop from './Components/Backdrop/Backdrop';
-import MonthlyCalendar from './Components/MonthlyCalendar';
-//import {Provider} from 'react-redux';
-//import store from './redux/store';
+import Nav from './Components/Nav/CoachToolbar/CoachToolBar';
+import Home from './Components/Home';
+import Messaging  from './Components/Messaging/ChatApp';
+import Profile  from './Profile';
+import Schedule from './Schedule';
+import Training from './Training';
+
 
 class App extends Component {
-  state = {
-    sideDrawerOpen: false,
-  }
-
-  drawerToggleClickHandler = () => {
-    this.setState(prevState => {
-      return { sideDrawerOpen: !prevState.sideDrawerOpen }
-    })
-  }
-
-  backdropClickHandler = () => {
-    this.setState({ sideDrawerOpen: false })
-  }
 
   render() {
-    let backdrop
-    let sideDrawer
 
-    if (this.state.sideDrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />
-      sideDrawer = <SideDrawer />
-    }
     return (
-      <>
-        <div style={{ height: '100%' }}>
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          {sideDrawer}
-          {backdrop}
-          <main style={{ marginTop: '64px' }}>
+      <React.Fragment>
+        <Router>
+          <Switch>
+            <Nav />
+            <Schedule />
+            <Route path="/" component = {Home} />         
+            <Route path="/Schedule" component={Schedule} />
+            <Route path="/Messaging" component={Messaging} />
+            <Route path="/Profile" component={Profile} />
+            <Route path="/Training" component={Training} />
+          </Switch>
+        </Router>
 
-            <MonthlyCalendar />
 
-          </main>
-        </div>
-
-
-      </>
-
-    )
+      </React.Fragment>
+    );
   }
 }
 

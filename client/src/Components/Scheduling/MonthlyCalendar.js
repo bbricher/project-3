@@ -1,6 +1,7 @@
 
 import React from "react";
 import { format, startOfMonth, endOfMonth,parse, startOfWeek,endOfWeek, isSameMonth, isSameDay,addDays,addMonths,subMonths,onDateClick} from "date-fns";
+import './MonthlyCalendar.css';
 
 class MonthlyCalendar extends React.Component {
   state = {
