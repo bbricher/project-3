@@ -34,15 +34,14 @@ export default class Auth {
             idToken: authResult.idToken
           }
         })
-        .then(function (response) {
-          var data = JSON.parse(response.config.data);
-          console.log(data)
+        .then(response => {
+          // var data = JSON.parse(response.config.data);
+          this.setSession({...authResult, userId: response.data._id});
+          history.replace('/home');
         })
         .catch(function (error) {
           console.log(error);
         });
-        this.setSession(authResult);
-        history.replace('/home');
       } else if (err) {
         history.replace('/home');
         console.log(err);
@@ -65,6 +64,7 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('userId', authResult.userId);
     // navigate to the home route
     history.replace('/home');
   }
@@ -75,6 +75,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('userId');
     // navigate to the home route
     history.replace('/home');
   }
