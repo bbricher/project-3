@@ -7,7 +7,7 @@ import Home from './Components/Home';
 
 
 import Routes from './Routes';
-//import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
-//registerServiceWorker();
+// registerServiceWorker();

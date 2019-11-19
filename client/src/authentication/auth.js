@@ -1,5 +1,7 @@
 import auth0 from 'auth0-js';
 
+import axios from 'axios';
+
 import history from './history';
 
 export default class Auth {
@@ -21,14 +23,39 @@ export default class Auth {
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
-        history.replace('/home');
+        console.log(authResult);
+        console.log('making api call')
+        axios({
+          url: '/api/coaches',
+          method: 'POST',
+          headers: {
+            sub: authResult.idTokenPayload.sub,
+            iss: authResult.idTokenPayload.iss,
+            idToken: authResult.idToken
+          }
+        })
+        .then(response => {
+          // var data = JSON.parse(response.config.data);
+          this.setSession({...authResult, userId: response.data._id});
+          history.replace('/home');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       } else if (err) {
         history.replace('/home');
         console.log(err);
       }
     });
   }
+
+  // '/api/coaches', {
+  //   // find way to pass in as headers (documentation in axios)
+  //   sub: authResult.idTokenPayload.sub,
+  //   iss: authResult.idTokenPayload.iss,
+  //   idToken: authResult.idToken
+  //   // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN
+  // }
 
   // Sets user details in localStorage
   setSession = (authResult) => {
@@ -37,6 +64,7 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('userId', authResult.userId);
     // navigate to the home route
     history.replace('/home');
   }
@@ -47,6 +75,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('userId');
     // navigate to the home route
     history.replace('/home');
   }

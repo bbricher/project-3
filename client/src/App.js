@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+//import logo from './logo.svg';
 import './App.css';
-import Nav from './Components/Nav/CoachToolbar/CoachToolBar';
-import Home from './Components/Home';
-import Messaging  from './Components/Messaging/ChatApp';
-import Profile  from './Profile';
-import Schedule from './Schedule';
-import Training from './Training';
+//import NavBar from './Components/NavBar';
+//import MonthlyCalendar from "./Components/MonthlyCalendar";
+import Toolbar from './Components/CoachToolBar/CoachToolBar';
+import SideDrawer from './Components/SideDrawer/SideDrawer';
+import Backdrop from './Components/Backdrop/Backdrop';
+import MonthlyCalendar from './Components/MonthlyCalendar';
+import Schedule from '././pages/coach-side/Schedule'
+//import {Provider} from 'react-redux';
+//import store from './redux/store';
 
 
 class App extends Component {
