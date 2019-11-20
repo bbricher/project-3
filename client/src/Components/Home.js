@@ -31,8 +31,6 @@ class Home extends Component {
               </a>.
             </h5>
             <App/>
-
-            
           </div>
         }
         {

@@ -12,9 +12,9 @@ const eventSchema =new Schema({
 });
 
 const coachProfileSchema = new Schema ({
-  name: { type: String, required: true },
-  introduction: { type: String, required: true },
-  favoriteAge: { type: String, required: true },
+  name: { type: String, required: true, default: "Coach Bri" },
+  introduction: { type: String, required: true, default: "Bri has worked for playwisely since Fall of 2017. She is very enthusiastic with card flashing and has the energy to work well with growing minds of all types!" },
+  favoriteAge: { type: String, required: true, default: "Babies 2, and Preschool" },
   messagingToken: { type: String }
 })
 
