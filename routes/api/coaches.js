@@ -41,6 +41,13 @@ router.route("/")
       })
   });
 
+router.route("/:coachId/profile")
+  .get(function(req, res){
+    const coachId = req.params.coachId
+    db.Coach.findOne({ sub: coachId }).then(results => {
+      console.log(results);
+    })
+  })
 
 router.route("/:coachId/events")
   .post(function (req, res) {

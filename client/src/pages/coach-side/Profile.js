@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { Row, Col } from 'react-bootstrap';
+
+import API from "../../utils/API"
 
 class Profile extends Component {
     state = {
-        name: "",
-        years: "",
-        background: "",
-        class_certification: ""
+        coach: ""
     }
 
     componentDidMount() {
@@ -13,7 +13,9 @@ class Profile extends Component {
     }
 
     loadProfile = () => {
-        
+        API.getCoach()
+            .then(res => this.setState({ coach: res.data }))
+            .catch(err => console.log(err));
     }
 
 
@@ -21,17 +23,20 @@ class Profile extends Component {
     render() {
         return (
             <>
-                {/* <Row> */}
+                <Row>
                     <h1>
                         Profile
                     </h1>
+                    <h2>
+                        {this.state.coach.name}
+                    </h2>
 
 
 
 
 
 
-                {/* </Row> */}
+                </Row>
 
 
             </>
