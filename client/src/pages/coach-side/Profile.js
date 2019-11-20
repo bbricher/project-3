@@ -21,7 +21,7 @@ class Profile extends Component {
     render() {
         return (
             <>
-                <Row>
+                {/* <Row> */}
                     <h1>
 
                     </h1>
@@ -31,7 +31,7 @@ class Profile extends Component {
 
 
 
-                </Row>
+                {/* </Row> */}
 
 
             </>
