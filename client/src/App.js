@@ -25,7 +25,7 @@ class App extends Component {
 
     return (
       <>
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      <Tab.Container mountOnEnter="true" id="left-tabs-example" defaultActiveKey="home" expand="lg">
         <Row>
           <Nav variant="pills">
             <Nav.Item>
