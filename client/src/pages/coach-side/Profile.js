@@ -23,7 +23,7 @@ class Profile extends Component {
             <>
                 {/* <Row> */}
                     <h1>
-
+                        Profile
                     </h1>
 
 

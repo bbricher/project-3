@@ -23,23 +23,23 @@ export const CoachToolBar = () => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>
-            <Nav.Link>
-              <Link to="/">Home</Link>
+            <Nav.Link href="home">
+              Home
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>
-              <Link to="/Schedule">Schedule</Link>
+            <Nav.Link href="Schedule">
+              Schedule
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>
-              <Link to="/Profile">Profile</Link>
+            <Nav.Link href="Profile">
+              Profile
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>
-              <Link to="/Training">Training</Link>
+            <Nav.Link href="Training">
+              Training
             </Nav.Link>
           </Nav.Item>
                   </Nav>

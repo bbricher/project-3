@@ -10,7 +10,7 @@ import Toddler3 from "./Toddler3";
 
 
 
-class CatchingAndThrowing extends Component {
+class Kicking extends Component {
     render() {
         return(
             <>
@@ -34,4 +34,4 @@ class CatchingAndThrowing extends Component {
     }
 }
 
-export default CatchingAndThrowing;
+export default Kicking;

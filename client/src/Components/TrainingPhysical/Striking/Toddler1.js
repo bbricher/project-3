@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Babies1 extends Component {
+class Toddler1 extends Component {
   render() {
     return (
       <>
@@ -10,24 +10,25 @@ class Babies1 extends Component {
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={require("../../../Images/Ct-B1-track-trap.PNG")}
+                    src={require("../../../Images/Ct-T1-catch-throw.PNG")}
                     className="card-img"
-                    alt="Trapping Image"
+                    alt="Grabbing Image"
                   ></img>
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">Track and Trap</h5>
+                    <h5 className="card-title">Catch and Throw</h5>
                     <p className="card-text">
                       <b>Goal:</b> Successfully coordinate visual tracking w/
                       goal directed limb reaching resulting in a successful
-                      ‘trap’ of an uphill rolling ball (5 months); develop
-                      purposeful release of ball (infant form of ‘throwing’ – 6
-                      months)
+                      ‘catch’ of a low/mid amp rolling or bouncing ball uphill
                       <br />
-                      <b>How:</b> Football hold; start with baby holding 5”/10
-                      cm ball; pat, press, roll to release ball; repeat with
-                      other size/weight balls; low amp
+                      <b>How:</b> Supported straddle sit; start with toddler
+                      holding 5”/12 cm ball; have toddler release throw ball
+                      into bucket (target) (overhand throw @ 14 months); catch a
+                      rolled or bounced low/mid amp ball uphill; ball sizes;
+                      pike position, roll 3”/8cm ball up right then left sides
+                      NEW: Dynamic target (S/D)
                     </p>
                   </div>
                 </div>
@@ -39,21 +40,22 @@ class Babies1 extends Component {
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={require("../../../Images/Ct-B1-swing-trap.PNG")}
+                    src={require("../../../Images/Ct-T1-swing-catch.PNG")}
                     className="card-img"
                     alt="Swinging Image"
                   ></img>
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">Swing and Trap</h5>
+                    <h5 className="card-title">Swing and Catch</h5>
                     <p className="card-text">
-                      <b>Goal:</b> Smoothly track and ‘trap’ low amp swinging
-                      ball motion linearly and angularly in horizontal and
-                      vertical planes
+                      <b>Goal:</b> Smoothly track and ‘catch’ mid amp swinging
+                      ball motion in the vertical plane
                       <br />
                       <b>How:</b>
-                      Supine and supported sit; ball sizes; low amp
+                      Supported stand; start with toddler holding the ball at
+                      hip height; release ball to swing and catch at mid amp;
+                      ball sizes NEW: Dynamic target (S/D)
                     </p>
                   </div>
                 </div>
@@ -67,29 +69,25 @@ class Babies1 extends Component {
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={require("../../../Images/Ct-B1-tilt-trap.PNG")}
+                    src={require("../../../Images/Ct-T1-basketball-drop.PNG")}
                     className="card-img"
                     alt="Tilting Image"
                   ></img>
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">Tilt and Trap</h5>
+                    <h5 className="card-title">Basketball Drop</h5>
                     <p className="card-text">
-                      <b>Goal:</b> Baby can deliberately grasp balls off cone
-                      with right and left hands in the horizontal and vertical
-                      planes. Baby can release balls into a bucket with help;
-                      exercises visual/spatial awareness by performing activity
-                      in different spatial planes
+                      <b>Goal:</b> Toddler can deliberately drop balls into a
+                      child’s basketball hoop; toddler can drop balls into low
+                      and mid space targets in the vertical and horizontal
+                      planes
                       <br />
-                      <b>How:</b> Football hold and supported vertical stand;
-                      right hand and left hand; ball sizes/weights; (5”/10cm
-                      balls baby will generally use 2 hands)
-                      <br />
-                      <b>Why:</b> Develop, exercise and coordinate
-                      visual/spatial processing skills with motor planning
-                      ability (get balls successfully in different spatial
-                      planes using correct right or left arm/hand reach)
+                      <b>How:</b> Supported stand using a floor marker; 3”/8 cm
+                      and 5”/10cm balls; use child’s basketball hoop and low
+                      profile targets; use a small hoop and manually define
+                      targets in vertical and horizontal planes; (overhand throw
+                      @ 14 months) NEW: Static target (S/S)
                     </p>
                   </div>
                 </div>
@@ -101,23 +99,23 @@ class Babies1 extends Component {
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={require("../../../Images/Ct-B1-track-time.PNG")}
+                    src={require("../../../Images/Ct-T1-balloon-catch.PNG")}
                     className="card-img"
                     alt="Tracking Image"
                   ></img>
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">Tracking Time</h5>
+                    <h5 className="card-title">Balloon Catch</h5>
                     <p className="card-text">
-                      <b>Goal:</b> Smoothly track low amp rolling balls linearly
-                      and angularly in the horizontal plane (on floor and
-                      down/up incline mat; track lightly tapped tethered helium
-                      balloons
+                      <b>Goal:</b> Smoothly track and catch a 1/3 helium filled
+                      balloon dropped from slightly above and in front of
+                      toddler at low amp
                       <br />
-                      <b>How:</b> Prone and supported sit; ball sizes (tapped
-                      tethered helium balloons for vertical plane tracking);
-                      incline mat tracking from top; side and bottom
+                      <b>How:</b> Toddler stands on marker and looks at balloon
+                      held in front and slightly above head height; child
+                      reaches arms up toward balloon; drop balloon and encourage
+                      child to catch it. NEW: Dynamic Target (D/S)
                     </p>
                   </div>
                 </div>
@@ -130,4 +128,4 @@ class Babies1 extends Component {
   }
 }
 
-export default Babies1;
+export default Toddler1;

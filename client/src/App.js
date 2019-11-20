@@ -11,6 +11,7 @@ import Profile from '././pages/coach-side/Profile';
 import Training from '././pages/coach-side/Training'
 // import Toolbar from './Components/CoachToolBar/CoachToolBar';
 import Schedule from '././pages/coach-side/Schedule'
+import Weekly from './Components/Scheduling/Weekly';
 //import {Provider} from 'react-redux';
 //import store from './redux/store';
 
@@ -21,9 +22,13 @@ class App extends Component {
 
     return (
       <>
-        {/* <Router>
+      <Training />
+      <Weekly/>
+      <React.Fragment>
+        <Router>
           <Switch>
             <Nav />
+            
             <Schedule /> 
             <Route path="/" component = {Home} />         
             <Route path="/Schedule" component={Schedule} />
@@ -31,7 +36,10 @@ class App extends Component {
             <Route path="/Profile" component={Profile} />
             <Route path="/Training" component={Training} />
           </Switch>
-        </Router> */}
+        </Router>
+
+
+      </React.Fragment>
       </>
     );
   }

@@ -44,7 +44,10 @@ router.route("/")
 
 router.route("/:coachId/events")
   .post(function (req, res) {
-    // db.Coach.findById(req.params.coachId).then(results => )
+    const coachId = req.params.coachId
+    db.Coach.findOne({ sub: coachId }).then(results => {
+      console.log(results);
+    })
   })
 
 

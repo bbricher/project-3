@@ -7,27 +7,15 @@ import Coachtoolbar from '../../Components/Nav/CoachToolbar/CoachToolBar';
 
 
 class Schedule extends Component {
-  renderEvents = () => {
-      let userId = JSON.parse(localStorage.getItem('userId'));
-      axios({
-          url:`/${userId}/events`,
-          method: "GET",
-      })
-      .then(response => {
-          
-      })
-  }
+  
 
   render() {
 
     return (
-      <Router>
         <>
           <Coachtoolbar />
           <MonthlyCalendar />
         </>
-      </Router>
-
     )
   }
 }
