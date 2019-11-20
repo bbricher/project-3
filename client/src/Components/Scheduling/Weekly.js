@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import AvailableTimes from "react-available-times";
+import axios from "axios";
 
 class Weekly extends Component {
   render() {
+    const renderEvents = () => {
+      let userId = localStorage.getItem(('userId').value);
+      axios({
+          url:`/${userId}/events`,
+          method: "GET",
+      })
+      .then(response => {
+          console.log(response);
+      })
+    }
+    
     return (
+      <div className="container">
       <AvailableTimes
         weekStartsOn="monday"
         calendars={[
@@ -25,6 +38,7 @@ class Weekly extends Component {
         onEventsRequested={({ calendarId, start, end, callback }) => {
             // console.log(calendarId, start, end)
         //   briesApiCall(calendarId, start, end).then(callback);
+          renderEvents();
           callback([
             {
               calendarId: "work",
@@ -44,6 +58,7 @@ class Weekly extends Component {
         availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday']}
         availableHourRange={{ start: 7, end: 16 }}
       />
+      </div>
     );
   }
 }
